@@ -12,16 +12,14 @@ export class RickyMortyComponent implements OnInit {
   constructor(private personajeService:PersonajeService) {  }
 
   ngOnInit(): void {
+    // this.obtenerPersonajes();
     this.obtenerPersonajes();
   }
 
   obtenerPersonajes(){
-    this.personajeService.getlist().subscribe(
-      res =>{
-        this.personajes = res;
-      },
-      err=> console.error(err)
-    )
+    this.personajeService.getResponse().subscribe(data =>{
+      this.personajes = data.results;
+    })
   }
 
   vivo(){
