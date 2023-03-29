@@ -1,0 +1,22 @@
+<p>ricky-morty works!</p>
+<button class="btn btn-primary" (click)="vivo()">Alive</button>
+<button class="btn btn-primary" (click)="muerto()">Dead</button>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>nombre</th>
+            <th>género</th>
+            <th>foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let personaje of personajes">
+            <div *ngIf="personaje.status == status">
+                <td>{{personaje.name}}</td>
+                <td>{{personaje.gender}}</td>
+                <td><img src="{{personaje.image}}" height="100px" alt="{{personaje.name}}">
+                </td>
+            </div>
+        </tr>
+    </tbody>
+</table>
